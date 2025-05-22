@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo app</title>
+    <style>
+        button{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="input" placeholder="enter your todo">
+    <button onclick="add()">add</button>
+    <ol type="1"id="inputtask"></ol>
+
+    <script>
+        function add(){
+let a =document.getElementById("input").value
+console.log(a);
+if(!a){
+    return
+}
+else{
+let c=document.createElement("li")
+c.innerHTML=a
+let removeButtion=document.createElement("button")
+removeButtion.innerHTML="remove"
+removeButtion.onclick=remove
+let d=document.getElementById("inputtask").appendChild(c)
+  d.appendChild(removeButtion)
+let f=document.getElementById("input")
+ f.value="" 
+  function remove(){
+    d.remove()
+    removeButtion.remove()
+  }
+        }
+}
+
+    </script>
+</body>
+</html>

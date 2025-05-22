@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="bg">
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Custom Element Example</title>
+    </head>
+
+    <body>
+        <h1>Form</h1>
+        <form action="" onsubmit="myfunction(event)">
+            <label for=""> name: </label><input type="text" id="name" placeholder="enter your name"><br><br>
+            <p id="p"></p>
+            <label for="">lastname :</label><input type="text" name="" id="lastname"
+                placeholder="enter your lastname"><br><br>
+            <label for="">email: </label><input type="email" placeholder="email" id="email"><br><br>
+            <label for="">phone</label> <input type="number" name="" id="number" placeholder="phone"><br><br>
+            <button type="submit">submit</button>
+        </form>
+
+        <script>
+            function myfunction(event) {
+                event.preventDefault()
+                let a = document.getElementById("name").value.trim()
+                console.log(a);
+
+                let b = document.getElementById("lastname").value.trim()
+                let c = document.getElementById("email").value.trim()
+                // let d = document.getElementById("password").value
+                let f = document.getElementById("number").value.trim()
+
+                if (a.length < 3) {
+                    alert("min cracter should be 3 or more than 3")
+                    return
+                }
+                else {
+                    if (b.length < 3) {
+                        alert("min cracter should be 3 or more than 3")
+                        return
+                    }
+                    else {
+                        if (c.length < 3) {
+                            alert("min cracter should be 3 or more than 3  in email")
+                        }
+                        else {
+                            const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            let check = pattern.test(c);
+                            if (!check) {
+                                alert("plz enter the valid email ")
+                                return
+                            }
+
+                        }
+                        if (f.length !== 10) {
+                            alert("number ki length 10 honi chayie")
+                            return
+                        }
+                        alert("form submit")
+                        location.reload()
+                    }
+                }
+
+
+            }
+          
+        </script>
+    </body>
+
+
+    </html>

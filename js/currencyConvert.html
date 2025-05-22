@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>convert curency</h1>
+    <label for="">rupees</label><input type="text" name="" id="rupee"><br>
+    <label for="">doller</label><input type="text" name="" id="doller" value=""><br>
+    <button onclick="myfunction()">submit</button>
+    <script>
+
+        // 85.86
+        function myfunction() {
+            let a = document.getElementById("rupee").value
+            console.log(a)
+             document.getElementById("doller").value= a * 85.86
+            
+        }
+    </script>
+</body>
+
+</html>
